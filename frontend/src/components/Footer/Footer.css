@@ -1,0 +1,114 @@
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #aaa;
+}
+.footer-links h4,
+.footer-social h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 5px 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #bbb;
+  transition: color 0.3s;
+}
+
+.footer-newsletter input {
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.footer-newsletter button {
+  padding: 8px 12px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: white;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:nth-child(1):hover {
+  color: #3b5998; /* Facebook Blue */
+  transform: scale(1.2);
+}
+
+.social-icons a:nth-child(2):hover {
+  color: #1da1f2; /* Twitter Blue */
+  transform: scale(1.2);
+}
+
+.social-icons a:nth-child(3):hover {
+  color: #e1306c; /* Instagram Pink */
+  transform: scale(1.2);
+}
+
+.social-icons a:nth-child(4):hover {
+  color: #ff0000; /* YouTube Red */
+  transform: scale(1.2);
+}
+.footer-bottom {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .footer-newsletter {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+  }
+
+  .footer-newsletter input {
+    width: 70%;
+    margin-bottom: 10px;
+  }
+
+  .footer-newsletter button {
+    width: 30%;
+  }
+}

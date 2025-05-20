@@ -1,0 +1,186 @@
+/* General Styles */
+.movie-details-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Movie Title */
+.movie-details-heading {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Movie Poster */
+.movie-details-poster-img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Release Info */
+.release-info {
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+}
+
+.release-info h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  align-items: center;
+  text-align: center;
+  color: #FFCA2C; 
+}
+
+.release-info p {
+  margin: 5px 0;
+}
+
+.red {
+  color: red;
+}
+
+/* Download Section */
+.go-download-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.download-section {
+  text-align: center; /* Center align heading and buttons */
+  width: 100%;
+  margin-top: 20px;
+}
+
+.download-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #FFCA2C; 
+}
+
+.download-section hr {
+  width: 94vw;
+  border: 1px solid #ccc;
+  margin: 10px auto;
+}
+.movie-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Download Buttons */
+.download-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-details-download-btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.movie-details-download-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  /* Adjust movie title font size */
+  .movie-details-heading {
+    font-size: 24px;
+  }
+  .movie-card-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Adjust movie poster image */
+  .movie-details-poster-img {
+    max-width: 300px; /* Smaller max-width for mobile */
+  }
+
+  /* Adjust release info text */
+  .release-info {
+    font-size: 14px; /* Smaller font for release info */
+  }
+
+  .release-info h2 {
+    font-size: 18px;
+  }
+
+  /* Download section */
+  .download-section h2 {
+    font-size: 20px; /* Slightly smaller heading */
+  }
+
+  /* Adjust download buttons */
+  .movie-details-download-btn {
+    font-size: 14px; 
+    padding: 8px 16px; 
+  }
+
+  /* Adjust layout of download section */
+  .download-buttons {
+    flex-direction: column; 
+  }
+
+  /* Ensure the search bar is responsive */
+  .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .me-2 {
+    margin-right: 0; 
+    margin-bottom: 10px; 
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust movie title font size for very small screens */
+  .movie-details-heading {
+    font-size: 20px;
+  }
+
+  /* Reduce movie poster max width even more for very small screens */
+  .movie-details-poster-img {
+    max-width: 250px;
+  }
+
+  /* Further adjust release info font size */
+  .release-info {
+    font-size: 12px;
+  }
+
+  .release-info h2 {
+    font-size: 16px;
+  }
+
+  /* Adjust download button size for very small screens */
+  .movie-details-download-btn {
+    font-size: 12px;
+    padding: 6px 12px; 
+  }
+}

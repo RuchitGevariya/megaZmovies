@@ -1,0 +1,43 @@
+
+.nav-text:hover{
+  color: yellow;
+}
+.navbar {
+  height: 60px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  padding: 10px 15px; /* Adjust spacing */
+  line-height: normal; /* Fix text alignment */
+  display: flex;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #212529; 
+    padding: 1rem 0;
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    padding: 10px 20px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+  }
+}
+

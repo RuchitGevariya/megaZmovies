@@ -1,0 +1,180 @@
+// {
+  //   title: "Fury 2014 Hindi Audio",
+  //   date: "21 Nov 2014",
+  //   image: images.fury,
+  //   description:
+  //     "As the Allies make their final push into Nazi Germany, a battle-hardened army sergeant commands a Sherman tank and its five-man crew on a deadly mission behind enemy lines.",
+  //   genres: ["Action", "Drama", "War"],
+  //   duration: "2h 14m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  //  driveId: "dummy_drive_id_1",  // Dummy driveId for testing
+  // },
+     "Interstellar",
+  //   date: "07 Nov 2014",
+  //   image: images.Interstellar,
+  //   description:
+  //     "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+  //   genres: ["Adventure", "Drama", "Sci-Fi"],
+  //   duration: "2h 49m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_5",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Inception",
+  //   date: "16 Jul 2010",
+  //   image: images.Inception,
+  //   description:
+  //     "A thief who enters the dreams of others to steal their secrets from their subconscious is offered a chance to have his criminal history erased as payment for a task considered to be impossible.",
+  //   genres: ["Action", "Sci-Fi", "Thriller"],
+  //   duration: "2h 28m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_6",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Avengers: Endgame",
+  //   date: "26 Apr 2019",
+  //   image: images.avengers_endgame,
+  //   description:
+  //     "After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions and restore balance to the universe.",
+  //   genres: ["Action", "Adventure", "Sci-Fi"],
+  //   duration: "3h 1m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_7",  // Dummy driveId for testing
+  // },
+ 
+  // {
+  //   title: "Spider-Man: No Way Home",
+  //   date: "17 Dec 2021",
+  //   image: images.spider_man_noway_home,
+  //   description:
+  //     "Peter Parker's life is thrown into chaos when a spell goes wrong, causing villains from other universes to enter his world.",
+  //   genres: ["Action", "Adventure", "Fantasy"],
+  //   duration: "2h 28m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_9", 
+  // },
+
+ //south movies
+  // {
+  //   title: "Pushpa: The Rise",
+  //   date: "17 Dec 2021",
+  //   image: images.Pushpa,
+  //   description:
+  //     "A laborer rises to power in the red sandalwood smuggling industry, making enemies along the way.",
+  //   genres: ["Action", "Crime", "Drama"],
+  //   duration: "2h 59m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  //   driveId: "dummy_drive_id_10",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "RRR",
+  //   date: "24 Mar 2022",
+  //   image: images.RRR,
+  //   description:
+  //     "A fictionalized story of two legendary revolutionaries who embark on a journey away from home to fight for their country.",
+  //   genres: ["Action", "Drama", "Historical"],
+  //   duration: "3h 7m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_11",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Vikram",
+  //   date: "03 Jun 2022",
+  //   image// {
+  //   title: "The Dark Knight",
+  //   date: "18 Jul 2008",
+  //   image: images.the_dark,
+  //   description:
+  //     "When the menace known as The Joker emerges, he causes chaos and forces Batman to walk the fine line between hero and vigilante.",
+  //   genres: ["Action", "Crime", "Drama"],
+  //   duration: "2h 32m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_4",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Polar 2019 Hindi Audio",
+  //   date: "25 Jan 2019",
+  //   image: images.polar,
+  //   description:
+  //     "A retiring assassin suddenly finds himself on the receiving end of a hit, contracted by none other than his own employer seeking to cash in on his pension.",
+  //   genres: ["Action", "Crime", "Thriller"],
+  //   duration: "1h 58m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  //   driveId: "dummy_drive_id_2",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "X-Men: Days of Future Past",
+  //   date: "23 May 2014",
+  //   image: images.xmen,
+  //   description:
+  //     "The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that results in doom for both humans and mutants.",
+  //   genres: ["Action", "Adventure", "Sci-Fi"],
+  //   duration: "2h 12m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_3",  // Dummy driveId for testing
+  // },
+
+  // {
+  //   title:: images.Vikram,
+  //   description:
+  //     "A special agent investigates a series of murders linked to a drug cartel and uncovers a deeper conspiracy.",
+  //   genres: ["Action", "Crime", "Thriller"],
+  //   duration: "2h 53m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  //   driveId: "dummy_drive_id_12",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Jailer",
+  //   date: "10 Aug 2023",
+  //   image: images.jailer,
+  //   description:
+  //     "A retired police officer takes matters into his own hands when his son, an honest cop, is kidnapped.",
+  //   genres: ["Action", "Thriller"],
+  //   duration: "2h 38m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  //   driveId: "dummy_drive_id_13",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Salaar: Part 1 – Ceasefire",
+  //   date: "22 Dec 2023",
+  //   image: images.Salaar_Part1_Ceasefire,
+  //   description:
+  //     "A brutal warrior with a mysterious past embarks on a mission to fulfill a promise made to his dying friend.",
+  //   genres: ["Action", "Thriller"],
+  //   duration: "2h 55m",
+  //   qualityOptions: ["480p", "720p", "1080p", "4K"],
+  //   driveId: "dummy_drive_id_14",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Leo",
+  //   date: "19 Oct 2023",
+  //   image: images.Leo,
+  //   driveId: "1I2XTSHYHperS-TITcY2dl1qNQ88B-HY-", 
+  //   description:
+  //     "A simple man with a mysterious past is forced to confront his hidden identity when his family is threatened.",
+  //   genres: ["Action", "Thriller"],
+  //   duration: "2h 44m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  // },
+  // {
+  //   title: "Varisu",
+  //   date: "11 Jan 2023",
+  //   image: images.Varisu,
+  //   description:
+  //     "A young man must step up and take control of his father's business empire while dealing with family rivalries.",
+  //   genres: ["Drama", "Family"],
+  //   duration: "2h 50m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  //   driveId: "dummy_drive_id_15",  // Dummy driveId for testing
+  // },
+  // {
+  //   title: "Kantara",
+  //   date: "30 Sep 2022",
+  //   image: images.Kantara,
+  //   description:
+  //     "A local hero fights to protect his village's sacred land from corporate greed and government oppression.",
+  //   genres: ["Action", "Mystery", "Drama"],
+  //   duration: "2h 30m",
+  //   qualityOptions: ["480p", "720p", "1080p"],
+  //   driveId: "dummy_drive_id_16",  // Dummy driveId for testing
+  // },
