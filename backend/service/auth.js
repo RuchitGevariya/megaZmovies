@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-const secretkey="Ruchit@123"
+const secretkey=process.env.JWT_SECRET_KEY
 
 export function setuser(admin){
   
