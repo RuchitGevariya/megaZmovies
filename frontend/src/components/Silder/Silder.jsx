@@ -8,7 +8,7 @@ const Silder = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/banner/allbanner');
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/banner/allbanner`);
         setBanners(res.data.banner); 
       } catch (err) {
         console.error('Failed to load banners', err);
@@ -40,7 +40,7 @@ const Silder = () => {
             className={`carousel-item ${index === 0 ? 'active' : ''}`}
           >
             <img
-              src={`http://localhost:3001/uploads/banners/${banner.image}`}
+              src={`${process.env.REACT_APP_API_URL}/uploads/banners/${banner.image}`}
               className="d-block w-100"
               alt={banner.title || 'Banner'}
             />

@@ -15,12 +15,12 @@ const CardDisplay = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await axios.get("http://192.168.29.230:3001/api/public/listAllPicture");
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/public/listAllPicture`);
   
         const updatedMovies = res.data.data.sort((a,b)=>Number(b.year)-Number(a.year))
         .map((movie) => ({
           ...movie,
-          image: `http://192.168.29.230:3001/uploads/${movie.image}`, // ✅ Full image path
+          image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`, // ✅ Full image path
         }));
   
         setMovies(updatedMovies);

@@ -14,13 +14,13 @@ const Hollywood = () => {
 
   useEffect(() => {
     axios
-      .get('http://192.168.29.230:3001/Api/public/listAllPicture')
+      .get(`${process.env.REACT_APP_API_URL}/Api/public/listAllPicture`)
       .then((res) => {
         const filtered = res.data.data
           .filter((movie) => movie.category.toLowerCase() === 'hollywood')
           .map((movie) => ({
             ...movie,
-            image: `http://localhost:3001/uploads/${movie.image}`,
+            image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`,
           }));
         setMovies(filtered);
         setLoading(false)

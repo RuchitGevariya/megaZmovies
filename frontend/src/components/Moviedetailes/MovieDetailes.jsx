@@ -24,7 +24,7 @@ const MovieDetailes = () => {
   const [relatedMovies, setRelatedMovies] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/public/listAllPicture")
+      .get(`${process.env.REACT_APP_API_URL}/api/public/listAllPicture`)
       .then((res) => {
         const related = res.data.data.filter(
           (movie) =>
@@ -38,7 +38,7 @@ const MovieDetailes = () => {
         // Pick only the first 4 shuffled movies
         const selected = shuffled.slice(0, 4).map((movie) => ({
           ...movie,
-          image: `http://localhost:3001/uploads/${movie.image}`,
+          image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`,
         }));
 
         setRelatedMovies(selected);
