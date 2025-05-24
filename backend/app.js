@@ -13,7 +13,7 @@ import adminRouter from "./router/admin.js"
 import {CheckAdmin} from "./middleware/auth.js"
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3002'],  
+  origin: ['http://localhost:3000', 'http://localhost:3002','https://mega-zmovies.vercel.app'],  
   credentials: true                // allow cookies
 }));
 
