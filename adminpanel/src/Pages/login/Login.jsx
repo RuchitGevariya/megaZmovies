@@ -28,7 +28,6 @@ const AdminLogin = () => {
         navigate('/'); 
       } else {
         alert("Login failed");
-            console.log(process.env.REACT_APP_API_URL);
       }
     } catch (err) {
       alert("Login error");
