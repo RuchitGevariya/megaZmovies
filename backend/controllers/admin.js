@@ -27,8 +27,8 @@ export async function handleLogin(req, res) {
   const token = setuser(admin);
   res.cookie("uid", token,{
     httpOnly:true,
-    secure:false,
-    sameSite:"strict",
+    secure:true,
+    sameSite:"None",
   maxAge:30*60*1000
   });
   return res.status(200).json({ message: "login successfully", success: true });
