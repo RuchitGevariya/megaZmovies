@@ -16,10 +16,6 @@ const Bollywood = () => {
         .then((res) => {
           const filtered = res.data.data
             .filter((movie) => movie.category.toLowerCase() === "bollywood")
-            .map((movie) => ({
-              ...movie,
-              image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`,  
-            }));
           setMovies(filtered); 
           setLoading(false)
         })

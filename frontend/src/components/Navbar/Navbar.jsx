@@ -34,13 +34,13 @@ export default function CustomNavbar() {
             <Nav.Link as={Link} to="/gujrati" className="nav-text">Gujrati</Nav.Link>
             <Nav.Link as={Link} to="/south" className="nav-text">South</Nav.Link>
             <Nav.Link as={Link} to="/animation" className="nav-text">Animation</Nav.Link>
-            <Nav.Link  className="d-flex align-items-center">
+            <Nav.Link  className="d-flex align-items-center" disabled>
               <FaTv className="me-1"  /> TV Shows
             </Nav.Link>
-            <Nav.Link href="#" className="d-flex align-items-center">
+            <Nav.Link href="#" className="d-flex align-items-center" disabled>
               <FaLink className="me-1" /> Genre
             </Nav.Link>
-            <Nav.Link href="#"className="nav-text">By Year</Nav.Link>
+            <Nav.Link href="#"className="nav-text" disabled>By Year</Nav.Link>
           </Nav>
 
           {/* Search Bar */}

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css'; 
 import { useNavigate } from 'react-router-dom';
-
+import { useAuth } from '../../Context/AuthContext';
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  
+  const { setIsAdminLoggedIn } = useAuth(); 
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -14,7 +16,7 @@ const AdminLogin = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:3001/api/auth/login', {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
         email,
         password
       }, {
@@ -22,7 +24,7 @@ const AdminLogin = () => {
       });
 
       if (res.data.success) {
-        alert("Login successful");
+         setIsAdminLoggedIn(true);
         navigate('/'); 
       } else {
         alert("Login failed");

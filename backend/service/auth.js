@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken"
 const secretkey=process.env.JWT_SECRET_KEY
 
+
 export function setuser(admin){
   
   const payload={

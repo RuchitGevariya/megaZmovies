@@ -30,25 +30,4 @@ function App() {
 
 export default App;
 
-//   return (
-//     <>
-//       <ToastContainer />
-//       <Navbar />
-//       <hr />
-//       <div className="app-content">
-//         <Sidebar />
-//         <Routes>
-//           <Route path="/adminlogin" element={<AdminLogin url={url} />} />
-//           <Route path="/add" element={<Add url={url} />} />
-//           <Route path="/list" element={<List url={url} />} />
-//           <Route path="/order" element={<Order url={url} />} />
-//           <Route path="/feedback" element={<Feedback url={url} />} />
-//           <Route path="/adminusers" element={<AdminUsers url={url} />} />
-//           <Route path="/Categorey" element={<CategoryPage url={url} />} />
-//         </Routes>
-//       </div>
-//     </>
-//   );
-// };
 
-// export default App;

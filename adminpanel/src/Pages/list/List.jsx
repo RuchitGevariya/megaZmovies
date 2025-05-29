@@ -10,7 +10,7 @@ const PictureGallery = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/admin/latestPicture?limit=8",{
+      .get(`${process.env.REACT_APP_API_URL}/api/admin/latestPicture?limit=8`,{
         withCredentials: true
       })
       .then((response) => {
@@ -44,7 +44,7 @@ const PictureGallery = () => {
             <div className="col-md-4 mb-4" key={picture._id}>
               <div className="card">
                 <img
-                  src={`http://localhost:3001/uploads/${picture.image}`}
+                  src={picture.image}
                   alt={picture.title}
                   className="card-img-top"
                   style={{ height: "250px", objectFit: "cover" }}

@@ -18,10 +18,6 @@ const Hollywood = () => {
       .then((res) => {
         const filtered = res.data.data
           .filter((movie) => movie.category.toLowerCase() === 'hollywood')
-          .map((movie) => ({
-            ...movie,
-            image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`,
-          }));
         setMovies(filtered);
         setLoading(false)
 

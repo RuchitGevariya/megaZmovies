@@ -40,7 +40,7 @@ const Silder = () => {
             className={`carousel-item ${index === 0 ? 'active' : ''}`}
           >
             <img
-              src={`${process.env.REACT_APP_API_URL}/uploads/banners/${banner.image}`}
+              src={banner.image}
               className="d-block w-100"
               alt={banner.title || 'Banner'}
             />

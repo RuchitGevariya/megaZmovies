@@ -6,9 +6,6 @@
 
 }
 
-.navbar .profile{
-  width: 40px;
-}
 a{
   text-decoration: none;
   color: inherit;
@@ -19,6 +16,26 @@ a{
   position: relative;
   left: 46px;
 }
+.login-btn,
+.logout-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Login Button */
+.login-btn {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: #dc3545;
+  color: #fff;
+}
 
 
 @media (max-width: 768px) {
@@ -27,8 +44,5 @@ a{
     font-size: 3vh;
     left: 0;
     margin-bottom: 10px;
-  }
-  .navbar .profile {
-    align-self: flex-end;
   }
 }

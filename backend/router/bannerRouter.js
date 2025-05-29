@@ -1,30 +1,34 @@
 import experss from "express"
-import { Banner} from "../models/banner.js";
-import multer from "multer";
-import path from "path"
 const router=experss.Router();
+import { Banner} from "../models/banner.js";
+import cloudinary from "../Cloudinary/config.js";
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.resolve('uploads/banners/'));
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname);
-  }
-});
-const upload = multer({ storage });
 
-router.post("/upload",upload.single("image"),async(req,res)=>{
-  console.log(req.body);
-  console.log(req.file);
-  
-  
+router.post("/upload",async(req,res)=>{
+ 
   try {
-    const banner = new Banner({ image: req.file.filename, title: req.body.title });
-    await banner.save();
-    res.json({ success: true, banner });
+ const {title}=req.body;
+ if(!title||!req.files||!req.files.image){
+   return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+ }
+ const file=req.files.image;
+ const result=await cloudinary.uploader.upload(file.tempFilePath,{
+   folder:"megaZmoviesbanner",
+   resource_type:"image"
+ })
+ await Banner.create({
+  image:result.secure_url,
+  title,
+ })
+    return res.status(201).json({
+      success: true,
+      message: "Picture added successfully",
+    });
   } catch (err) {
-    res.status(500).json({ error: 'Failed to upload banner' });
+   return res.status(500).json({ error: 'Failed to upload banner' });
   }
 })
 

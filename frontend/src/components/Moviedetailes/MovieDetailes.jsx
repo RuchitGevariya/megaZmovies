@@ -5,7 +5,6 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import Moviecard from "../Moviescard/Moviecard";
-import SkeletonCard from "../SkeletonCard/SkeletonCard";
 const MovieDetailes = () => {
   const location = useLocation();
   const {
@@ -30,18 +29,9 @@ const MovieDetailes = () => {
           (movie) =>
             movie.category.toLowerCase() === category.toLowerCase() &&
             movie.title !== title
-        );
+        ).sort(() => 0.5 - Math.random()).slice(0, 4)
 
-        // Shuffle the related movies randomly
-        const shuffled = related.sort(() => 0.5 - Math.random());
-
-        // Pick only the first 4 shuffled movies
-        const selected = shuffled.slice(0, 4).map((movie) => ({
-          ...movie,
-          image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`,
-        }));
-
-        setRelatedMovies(selected);
+        setRelatedMovies(related);
       })
       .catch((err) => console.log(err));
     window.scrollTo(0, 0);

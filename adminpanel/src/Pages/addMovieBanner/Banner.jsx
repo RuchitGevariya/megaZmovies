@@ -22,7 +22,7 @@ const Banner = () => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:3001/api/admin/upload", formData,{
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/admin/upload`, formData,{
         withCredentials: true
       });
       alert("Uploaded successfully");
@@ -37,9 +37,10 @@ const Banner = () => {
   };
 
   return (
+    <>
+ 
     <div className="upload-banner-container">
-      <h3>Upload Banner</h3>
-
+         <h3>Upload Banner</h3>
       <input
         type="text"
         placeholder="Banner Title"
@@ -64,7 +65,9 @@ const Banner = () => {
       >
         {loading ? 'Uploading...' : 'Upload'}
       </button>
-    </div>  )
+    </div>  
+ </>
+    )
 }
 
 export default Banner;

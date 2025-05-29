@@ -18,11 +18,7 @@ const CardDisplay = () => {
         const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/public/listAllPicture`);
   
         const updatedMovies = res.data.data.sort((a,b)=>Number(b.year)-Number(a.year))
-        .map((movie) => ({
-          ...movie,
-          image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`, // ✅ Full image path
-        }));
-  
+       
         setMovies(updatedMovies);
     setLoading(false)
         
@@ -63,9 +59,9 @@ const CardDisplay = () => {
 
   return (
     <>
-      <h1 className="cards-title">
+      {/* <h1 className="cards-title">
         Top <span style={{ color: "#FFC107" }}>IMDB</span> Rated Movies
-      </h1>
+      </h1> */}
 
       <div className="movies-container">
         {loading

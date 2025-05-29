@@ -35,10 +35,10 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/bollywood">Bollywood</Link></li>
-            <li><Link to="/hollywood">Hollywood</Link></li>
-            <li><Link to="/gujrati">Gujrati</Link></li>
-            <li><Link to="/animation">Animation</Link></li>
+            <li ><Link to="/bollywood">Bollywood</Link></li>
+            <li ><Link to="/hollywood">Hollywood</Link></li>
+            <li ><Link to="/gujrati">Gujrati</Link></li>
+            <li ><Link to="/animation">Animation</Link></li>
           </ul>
         </div>
         <div className="footer-newsletter">

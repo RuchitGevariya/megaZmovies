@@ -13,10 +13,6 @@ const Gujrati = () => {
       .then((res) => {
         const filtered = res.data.data
           .filter((movie) => movie.category.toLowerCase() === "gujrati")
-          .map((movie) => ({
-            ...movie,
-            image: `${process.env.REACT_APP_API_URL}/uploads/${movie.image}`,  
-          }));
         setMovies(filtered); 
       })
       .catch((err) => console.log(err)); 

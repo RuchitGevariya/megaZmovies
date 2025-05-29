@@ -40,6 +40,11 @@
   color: #bbb;
   transition: color 0.3s;
 }
+.footer-links ul li a:hover {
+  color: yellow; 
+   
+}
+
 
 .footer-newsletter input {
   padding: 8px;
@@ -95,6 +100,8 @@
   font-weight: 400;
   opacity: 0.8;
 }
+
+
 
 @media (max-width: 768px) {
   .footer-newsletter {

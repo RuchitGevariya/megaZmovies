@@ -39,7 +39,7 @@ function Add() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/admin/addPicture",
+        `${process.env.REACT_APP_API_URL}/api/admin/addPicture`,
         formData ,{
           withCredentials: true
         }
