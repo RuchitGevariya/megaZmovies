@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await axios.get("http://localhost:3001/api/auth/logout", {
+    await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/logout`, {
       withCredentials: true,
     });
     setIsAdminLoggedIn(false);
