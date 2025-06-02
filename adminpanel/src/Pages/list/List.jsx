@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./List.css";
+import config from "../../Config";
 
 
 const PictureGallery = () => {
@@ -10,12 +11,12 @@ const PictureGallery = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/admin/latestPicture?limit=8`,{
+      .get(`${config.API_URL}/api/admin/latestPicture?limit=8`,{
         withCredentials: true
       })
       .then((response) => {
         if (response.data.success) {
-          console.log(response.data.success);
+          console.log(response.data.data);
           
           setPictures(response.data.data);
         } else {
@@ -52,7 +53,7 @@ const PictureGallery = () => {
 
                 <div className="card-body">
                   <h5 className="card-title">{picture.title}</h5>
-                  <p className="card-text">{picture.description}</p>
+                  <p className="card-text">{picture.description.slice(0,50)}</p>
                   <p className="card-text">
                     <strong>Genre:</strong> {picture.genres}
                   </p>

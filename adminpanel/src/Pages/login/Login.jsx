@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Login.css'; 
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../Context/AuthContext';
+import config from '../../Config';
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,10 +14,10 @@ const AdminLogin = () => {
 
   const handleLogin = async () => {
     if (!email || !password) return alert("Please fill all fields");
-
+console.log("env",process.env.REACT_APP_API_URL)
     setLoading(true);
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
+      const res = await axios.post(`${config.API_URL}/api/auth/login`, {
         email,
         password
       }, {

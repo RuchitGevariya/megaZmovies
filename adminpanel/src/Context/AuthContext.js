@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
+import config from "../Config";
 
 const AuthContext = createContext();
 
@@ -9,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
   const checkAuth = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/auth/check`, { withCredentials: true })
+      .get(`${config.API_URL}/api/auth/check`, { withCredentials: true })
       .then((res) => {
         setIsAdminLoggedIn(res.data?.success || false);
       })

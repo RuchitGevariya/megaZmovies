@@ -1,6 +1,7 @@
 import {React,useState} from 'react'
 import "./banner.css"
 import axios from 'axios'
+import config from '../../Config'
 const Banner = () => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState(null);
@@ -22,7 +23,7 @@ const Banner = () => {
 
     setLoading(true);
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/admin/upload`, formData,{
+      await axios.post(`${config.API_URL}/api/admin/upload`, formData,{
         withCredentials: true
       });
       alert("Uploaded successfully");

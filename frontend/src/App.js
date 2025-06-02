@@ -8,6 +8,7 @@ import Hollywood from "./Pages/Hollywood/Hollywood";
 import Animation from "./Pages/Animation/Animation";
 import Bollywood from "./Pages/Bollywood/Bollywood";
 const App = () => {
+    console.log("ENV:", process.env.REACT_APP_API_URL);
   return (
     <Router>
       <Routes>

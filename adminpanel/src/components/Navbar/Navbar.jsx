@@ -1,16 +1,16 @@
-import { React, use, useEffect, useState } from "react";
+import { React} from "react";
 import "./Navbar.css";
 import axios from "axios";
-import assets from "../../assets/admin/assets";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
+import config from "../../Config";
 const Navbar = () => {
  const { isAdminLoggedIn, setIsAdminLoggedIn } = useAuth(); 
 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/logout`, {
+    await axios.get(`${config.API_URL}/api/auth/logout`, {
       withCredentials: true,
     });
     setIsAdminLoggedIn(false);

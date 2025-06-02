@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import config from "../../Config";
 function Add() {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState(null);
@@ -39,7 +39,7 @@ function Add() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/admin/addPicture`,
+        `${config.API_URL}/api/admin/addPicture`,
         formData ,{
           withCredentials: true
         }
