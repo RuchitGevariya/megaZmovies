@@ -41,7 +41,7 @@ const PictureGallery = () => {
           <p className="text-center">No pictures available.</p>
         ) : (
           pictures.map((picture) => (
-            <div className="col-md-4 mb-4" key={picture._id}>
+            <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={picture._id}>
               <div className="card">
                 <img
                   src={picture.image}
