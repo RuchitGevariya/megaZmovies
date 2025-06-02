@@ -28,7 +28,7 @@ export async function handleLogin(req, res) {
   res.cookie("uid", token,{
     httpOnly:true,
     secure:true,
-    sameSite:"None",
+    sameSite:'None',
   maxAge:30*60*1000
   });
   return res.status(200).json({ message: "login successfully", success: true });
@@ -46,6 +46,7 @@ res.clearCookie("uid", {
   secure: true,
   sameSite: 'None',
   path: '/',
+ domain: 'megazmovies.onrender.com'
 });
 return res.status(200).json({ message: "user logout", success: true });
 
