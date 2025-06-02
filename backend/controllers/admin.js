@@ -41,6 +41,12 @@ export async function handleCheck(req, res) {
 }
 
 export async function handleLogout(req, res) {
- res.clearCookie("uid");
- return res.status(200).json({message:"user logout",success:true})
+res.clearCookie("uid", {
+  httpOnly: true,
+  secure: true,
+  sameSite: 'None',
+  path: '/',
+});
+return res.status(200).json({ message: "user logout", success: true });
+
  }
