@@ -25,10 +25,12 @@ export async function handleLogin(req, res) {
     return res.status(401).json({ message: "Admin not found or password incorrect" });
   }
   const token = setuser(admin);
-  res.cookie("uid", token,{
+  res.cookie("uid",token,{
     httpOnly:true,
     secure:true,
     sameSite:'None',
+     path: '/',
+ domain: 'megazmovies.onrender.com',
   maxAge:30*60*1000
   });
   return res.status(200).json({ message: "login successfully", success: true });
@@ -41,13 +43,15 @@ export async function handleCheck(req, res) {
 }
 
 export async function handleLogout(req, res) {
+console.log("calling")
 res.clearCookie("uid", {
   httpOnly: true,
   secure: true,
   sameSite: 'None',
   path: '/',
- domain: 'megazmovies.onrender.com'
+  domain: 'megazmovies.onrender.com'
 });
-return res.status(200).json({ message: "user logout", success: true });
+console.log("cookie after logout",req.cookies);
 
+return res.status(200).json({ message: "user logout", success: true });
  }

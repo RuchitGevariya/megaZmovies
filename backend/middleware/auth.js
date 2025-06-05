@@ -14,8 +14,8 @@ export function CheckAdmin(req, res, next) {
     }
     req.admin = { id: admin.id };
     next();
-  } catch (errr) {
-    console.log("JWT verify failed:", err.message);
+  } catch (error) {
+    console.log("JWT verify failed:", error.message);
     return res.status(401).json({ message: "Token invalid or expired" });
   }
 }

@@ -9,13 +9,25 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    await axios.get(`${config.API_URL}/api/auth/logout`, {
+const handleLogout = async () => {
+  console.log("Logging out...");
+
+  try {
+    const res = await axios.get(`${config.API_URL}/api/auth/logout`, {
       withCredentials: true,
     });
-    setIsAdminLoggedIn(false);
-    navigate("/login");
-  };
+
+    console.log("Logout response:", res.data);
+
+    if (res.data?.success) {
+      setIsAdminLoggedIn(false);
+      navigate("/login");
+    }
+  } catch (err) {
+    console.error("Logout error:", err);
+  }
+};
+
 
   const handleLogin = () => {
     navigate("/login");

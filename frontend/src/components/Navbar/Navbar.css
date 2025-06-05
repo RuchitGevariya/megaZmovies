@@ -6,6 +6,9 @@
   height: 60px; /* Adjust as needed */
   display: flex;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
 .navbar-nav {
   display: flex;
@@ -13,10 +16,12 @@
 }
 
 .navbar-nav .nav-link {
-  padding: 10px 15px; /* Adjust spacing */
   line-height: normal; /* Fix text alignment */
   display: flex;
   align-items: center;
+    margin: 5px 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
