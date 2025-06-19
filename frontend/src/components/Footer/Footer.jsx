@@ -27,9 +27,11 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-          <h2>Mega Z<span className="text-warning"> Movies</span></h2>
-          <p>Watch. Download. Enjoy.</p>
-        </div>
+  <h2 className="footer-brand">
+    Mega Z<span className="text-accent"> Movies</span>
+  </h2>
+  <p className="footer-tagline">Watch. Download. Enjoy.</p>
+</div>
 
         <div className="footer-links">
           <h4>Quick Links</h4>

@@ -4,13 +4,12 @@ import Silder from "../../components/Silder/Silder";
 import CardDisplay from "../../components/CardDisplay/CardDisplay";
 import Footer from "../../components/Footer/Footer";
 const Home = () => {
-  
   return (
-    <div> 
+    <div>
       <CustomNavbar />
       <Silder />
-      <CardDisplay/>
-    <Footer/>
+      <CardDisplay />
+      <Footer />
     </div>
   );
 };

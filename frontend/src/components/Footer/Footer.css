@@ -1,6 +1,6 @@
 .footer {
-  background-color: #111;
-  color: #fff;
+  background-color: 	#cbd7e8;
+  color: 	#2c3e50;
   padding: 20px 0;
   text-align: center;
 }
@@ -16,7 +16,20 @@
   font-size: 24px;
   margin-bottom: 5px;
 }
+.footer-brand {
+  font-size: 2rem;
+  color: #2c3e50; /* Matches navbar base */
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.text-accent {
+  color: #f39c12; /* Amber accent for 'Movies' */
+}
 
+.footer-tagline {
+  font-size: 1rem;
+  color: #7f8c8d; /* Soft gray for the tagline */
+}
 .footer-logo p {
   font-size: 14px;
   color: #aaa;
@@ -37,11 +50,11 @@
 
 .footer-links ul li a {
   text-decoration: none;
-  color: #bbb;
+ color: #6c757d;
   transition: color 0.3s;
 }
 .footer-links ul li a:hover {
-  color: yellow; 
+  color: #f39c12; 
    
 }
 
@@ -49,12 +62,12 @@
 .footer-newsletter input {
   padding: 8px;
   margin-top: 10px;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
 }
 .footer-newsletter button {
   padding: 8px 12px;
-  background-color: orange;
+  background-color: #f39c12;
   color: #fff;
   border: none;
   margin-left: 5px;
@@ -76,7 +89,7 @@
   transition: all 0.3s ease;
 }
 
-.social-icons a:nth-child(1):hover {
+.social-icons a:nth-child(1):hover{
   color: #3b5998; /* Facebook Blue */
   transform: scale(1.2);
 }

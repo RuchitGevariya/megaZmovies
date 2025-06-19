@@ -12,9 +12,15 @@ a{
 }
 
 .brand{
-  font-size: 4.0vh;
+  font-size: 2rem;
   position: relative;
   left: 46px;
+ color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.text-accent {
+  color: #f39c12; /* Amber accent for 'Movies' */
 }
 .login-btn,
 .logout-btn {

@@ -65,7 +65,7 @@ const CardDisplay = () => {
 
       <div className="movies-container">
         {loading
-                  ? Array.from({ length: 4 }).map((_, index) => (
+                  ? Array.from({ length: 12 }).map((_, index) => (
                       <SkeletonCard key={index} />
                     ))
                   : currentMovies.map((movie, index) => (

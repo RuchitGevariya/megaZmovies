@@ -36,9 +36,12 @@ const handleLogout = async () => {
 
   return (
     <div className="navbar">
-      <div className="brand">
-        Mega Z<span className="text-warning"> Movies</span>
-      </div>
+     <div className="navbar-logo">
+  <h2 className="brand">
+    Mega Z<span className="text-accent"> Movies</span>
+  </h2>
+</div>
+
 
       {isAdminLoggedIn === null ? (
         <div className="loading-text">Checking auth...</div>
