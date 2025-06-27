@@ -26,7 +26,9 @@ try{
     toast.success("Thank you for Subscribe!");
     resetEmail();
     } catch(error){
-        toast.error("Something went wrong. Please check your connection");
+      if(error.response?.status===409){
+   toast.error("Email allready subscribed");
+      }
     console.error("Error details:", error);
 
     }
