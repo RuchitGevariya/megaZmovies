@@ -25,11 +25,14 @@ const MovieDetailes = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/public/listAllPicture`)
       .then((res) => {
-        const related = res.data.data.filter(
-          (movie) =>
-            movie.category.toLowerCase() === category.toLowerCase() &&
-            movie.title !== title
-        ).sort(() => 0.5 - Math.random()).slice(0, 4)
+        const related = res.data.data
+          .filter(
+            (movie) =>
+              movie.category.toLowerCase() === category.toLowerCase() &&
+              movie.title !== title
+          )
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 7);
 
         setRelatedMovies(related);
       })
@@ -51,32 +54,18 @@ const MovieDetailes = () => {
     <>
       <Navbar />
       <div className="movie-details-page-wrapper">
-        <div className="movie-details-content">
-          {/* Movie Title */}
-          <h1 className="movie-details-heading">
-            {title} WEB-HDRip [Hindi ORG DD 2.0] 1080p | 720p | HEVC | 480p
-            [x264|x265] Mega Z Movies
-          </h1>
-
-          {/* Movie Poster */}
-       
-          <img src={image} alt={title} className="movie-details-poster-img"  />
-          {/* Release Info Section */}
+        <div className="movie-details-main">
+          <img src={image} alt={title} className="movie-details-poster-img" />
           <div className="release-info">
-            <h2>-: Release Info :-</h2>
-            <p>
-              <strong className="red">Title:</strong> {title}
-            </p>
+            <h2 className="movie-details-heading">{title}</h2>
             <p>
               <strong className="red">Year:</strong> {year}
             </p>
             <p>
-              <strong className="red">Genres:</strong>
-              {Array.isArray(genres) ? genres.join(", ") : genres}
+              <strong className="red">Genres:</strong> {genres}
             </p>
             <p>
-              <strong className="red">Category:</strong>
-              {category}
+              <strong className="red">Category:</strong> {category}
             </p>
             <p>
               <strong className="red">Duration:</strong> {duration}
@@ -85,33 +74,29 @@ const MovieDetailes = () => {
               <strong className="red">Description:</strong> {description}
             </p>
           </div>
+        </div>
 
-          {/* Download Links */}
-          <div className="download-section">
-            <h2>-: Download Links :-</h2>
-            <hr />
-
-            <div className="download-buttons">
-              {qualityOptions.map((quality, index) => (
-                <div key={index} className="download-option">
-                  <a
-                    href={`https://drive.google.com/uc?export=download&id=${driveId}`}
-                    className="movie-details-download-btn"
-                  >
-                    {quality} - Download
-                  </a>
-                  <p className="go-download-text">Go & Download</p>
-                  <hr />
-                </div>
-              ))}
-            </div>
+        <div className="download-section">
+          <h2>Download Links</h2>
+          <div className="download-buttons">
+            {qualityOptions.map((quality, index) => (
+              <div key={index} className="download-option">
+                <a
+                  href={`https://drive.google.com/uc?export=download&id=${driveId}`}
+                  className="movie-details-download-btn"
+                >
+                  {quality} - Download
+                </a>
+              </div>
+            ))}
           </div>
-       
         </div>
       </div>
-      
+
       <div className="related-movies-section">
-        <div className="movie-card-container">
+         <h2 className="related-heading">Related Movies</h2>
+        <div className="related-movie-card-container">
+         
           {relatedMovies.map((movie, index) => (
             <Moviecard key={index} {...movie} />
           ))}
