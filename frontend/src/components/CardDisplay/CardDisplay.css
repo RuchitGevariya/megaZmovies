@@ -2,6 +2,12 @@
   margin-top: 15px;
   text-align: center;
 }
+.no-results {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: #888;
+}
 
 .movies-container {
   display: grid;

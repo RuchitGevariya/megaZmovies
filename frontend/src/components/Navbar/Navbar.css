@@ -30,6 +30,15 @@ position: sticky;
   padding-left: 10px;
   padding-right: 10px;
 }
+.mobile-search-bar {
+  position: absolute;
+  top: 60px; /* or whatever navbar height */
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: white;
+  z-index: 999;
+}
 
 
 @media (max-width: 768px) {

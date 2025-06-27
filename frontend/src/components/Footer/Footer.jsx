@@ -1,46 +1,64 @@
-import {React,useState} from "react";
+import { React, useState } from "react";
+import axios from "axios";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Footer.css"; // CSS file import
+import toast from "react-hot-toast";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); 
-  const handleSubmit = (e) => {
+  const resetEmail = () => {
+    setEmail("");
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
     if (!emailPattern.test(email)) {
-      setMessage("Please enter a valid email.");
-      setMessageType("error")
-    } else {
-      setMessage("Thank you for subscribing!");
-      setMessageType("success")
-      setEmail("");
+      toast.error("please enter vaild email");
     }
-    setTimeout(() => {
-      setMessage("");
-      setMessageType("");
-    }, 3000);
+try{
+    await axios.post(
+      `${process.env.REACT_APP_API_URL}/subscribe/news-letter`,
+      { email },
+      { withCredentials: true }
+    );
+    toast.success("Thank you for Subscribe!");
+    resetEmail();
+    } catch(error){
+        toast.error("Something went wrong. Please check your connection");
+    console.error("Error details:", error);
+
+    }
   };
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-  <h2 className="footer-brand">
-    Mega Z<span className="text-accent"> Movies</span>
-  </h2>
-  <p className="footer-tagline">Watch. Download. Enjoy.</p>
-</div>
+          <h2 className="footer-brand">
+            Mega Z<span className="text-accent"> Movies</span>
+          </h2>
+          <p className="footer-tagline">Watch. Download. Enjoy.</p>
+        </div>
 
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li ><Link to="/bollywood">Bollywood</Link></li>
-            <li ><Link to="/hollywood">Hollywood</Link></li>
-            <li ><Link to="/gujrati">Gujrati</Link></li>
-            <li ><Link to="/animation">Animation</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/bollywood">Bollywood</Link>
+            </li>
+            <li>
+              <Link to="/hollywood">Hollywood</Link>
+            </li>
+            <li>
+              <Link to="/gujrati">Gujrati</Link>
+            </li>
+            <li>
+              <Link to="/animation">Animation</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-newsletter">
@@ -54,25 +72,25 @@ const Footer = () => {
             id="email"
           />
           <button onClick={handleSubmit}>Subscribe</button>
-          {message && (
-            <p
-              style={{
-                color: messageType === "success" ? "lightgreen" : "red",
-                marginTop: "8px",
-              }}
-            >
-              {message}
-            </p>
-          )}
         </div>
 
         <div className="footer-social">
           <h4>Follow Us</h4>
           <div className="social-icons">
-           <Link to=""><FaFacebook /></Link> 
-           <Link to="">  <FaTwitter /></Link> 
-           <Link to=""><FaInstagram /></Link> 
-           <Link to=""> <FaYoutube /></Link> 
+            <Link to="">
+              <FaFacebook />
+            </Link>
+            <Link to="">
+              {" "}
+              <FaTwitter />
+            </Link>
+            <Link to="">
+              <FaInstagram />
+            </Link>
+            <Link to="">
+              {" "}
+              <FaYoutube />
+            </Link>
           </div>
         </div>
       </div>

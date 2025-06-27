@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Navbar,
   Nav,
@@ -17,10 +17,7 @@ export default function CustomNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { setSearchQuery } = useSearch();
   const [searchInput, setSearchInput] = useState("");
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSearchQuery(searchInput);
-  };
+
   return (
     <Navbar expand="md" className="px-3 navbar">
       <Container>
@@ -59,25 +56,28 @@ export default function CustomNavbar() {
           </Nav>
 
           {/* Search Bar */}
-          <Form className="d-flex" onSubmit={handleSearch}>
+          <Form className="d-flex">
             <FormControl
               type="search"
               placeholder="Search..."
               className="me-2"
               value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-            />
-            {/* search button */}
-            <Button
-              style={{
-                backgroundColor: "#3498db",
-                border: "none",
-                color: "#fff",
+              onChange={(e) => {
+                setSearchInput(e.target.value);
+                setSearchQuery(e.target.value);
               }}
-              type="submit"
-            >
-              <FaSearch />
-            </Button>
+            />
+            {searchInput && (
+              <Button
+                variant="outline-secondary"
+                onClick={() => {
+                  setSearchInput("");
+                  setSearchQuery("");
+                }}
+              >
+                Clear
+              </Button>
+            )}
           </Form>
         </Navbar.Collapse>
       </Container>

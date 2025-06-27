@@ -9,6 +9,7 @@ import cookies from "cookie-parser"
 import pictureRouter from "./router/picturRouter.js";
 import bannerRouter from "./router/bannerRouter.js"
 import adminRouter from "./router/admin.js"
+import newsLetterRouter from "./router/newsLetterRouter.js"
 import {CheckAdmin} from "./middleware/auth.js"
 import fileupload from "express-fileupload"
 import {fileURLToPath} from "url"
@@ -40,6 +41,7 @@ app.use(fileupload({
 // Public routes
 app.use("/api/public", pictureRouter);  
 app.use("/api/banner", bannerRouter);
+app.use("/subscribe",newsLetterRouter)
 //login router
 app.use("/api/auth",adminRouter)
 //secure routes

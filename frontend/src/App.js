@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {Toaster} from "react-hot-toast"
 import Home from "./Pages/home/Home";
 import MovieDetailes from "./components/Moviedetailes/MovieDetailes";
 import Gujrati from "./Pages/GujratiMovie/Gujrati";
@@ -8,8 +9,12 @@ import Hollywood from "./Pages/Hollywood/Hollywood";
 import Animation from "./Pages/Animation/Animation";
 import Bollywood from "./Pages/Bollywood/Bollywood";
 const App = () => {
-    console.log("ENV:", process.env.REACT_APP_API_URL);
   return (
+    <>
+    <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,6 +26,7 @@ const App = () => {
         <Route path="/movies/:title" element={<MovieDetailes/>} />
       </Routes>
     </Router>
+    </>
   );
 };
 

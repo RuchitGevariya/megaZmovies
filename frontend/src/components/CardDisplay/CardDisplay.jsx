@@ -15,23 +15,30 @@ const CardDisplay = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/public/listAllPicture`);
-  
-        const updatedMovies = res.data.data.sort((a,b)=>Number(b.year)-Number(a.year))
-       
-        setMovies(updatedMovies);
-    setLoading(false)
-        
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/public/listAllPicture`
+        );
+        const allMovies = res.data.data;
+
+        const filteredMovies = allMovies.filter((movie) =>
+          movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        const sortData = filteredMovies.sort(
+          (a, b) => Number(b.year) - Number(a.year)
+        );
+        setMovies(sortData);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
     };
-  
-  
-    fetchMovies();
-  }, []);
-  
 
+    fetchMovies();
+  }, [searchQuery]);
+  useEffect(() => {
+    console.log("that is search result:", movies);
+  }, [movies]);
   const totalPages = Math.ceil(movies.length / moviesPerPage);
   const startIndex = (currentPage - 1) * moviesPerPage;
   const currentMovies = movies.slice(startIndex, startIndex + moviesPerPage);
@@ -64,13 +71,19 @@ const CardDisplay = () => {
       </h1> */}
 
       <div className="movies-container">
-        {loading
-                  ? Array.from({ length: 12 }).map((_, index) => (
-                      <SkeletonCard key={index} />
-                    ))
-                  : currentMovies.map((movie, index) => (
-                      <Moviecard key={index} {...movie} />
-                    ))}
+        {loading ? (
+          Array.from({ length: 12 }).map((_, index) => (
+            <SkeletonCard key={index} />
+          ))
+        ) : currentMovies.length === 0 ? (
+          <div className="no-results">
+            <h3>No movies found for your search.</h3>
+          </div>
+        ) : (
+          currentMovies.map((movie, index) => (
+            <Moviecard key={index} {...movie} />
+          ))
+        )}
       </div>
 
       <div className="pagination-wrapper">
@@ -85,7 +98,9 @@ const CardDisplay = () => {
         {getPageNumbers().map((number) => (
           <button
             key={number}
-            className={`pagination-btn ${currentPage === number ? "active" : ""}`}
+            className={`pagination-btn ${
+              currentPage === number ? "active" : ""
+            }`}
             onClick={() => handlePageChange(number)}
           >
             {number}

@@ -109,6 +109,7 @@ const MovieDetailes = () => {
        
         </div>
       </div>
+      
       <div className="related-movies-section">
         <div className="movie-card-container">
           {relatedMovies.map((movie, index) => (
