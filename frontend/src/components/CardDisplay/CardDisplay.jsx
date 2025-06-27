@@ -23,11 +23,7 @@ const CardDisplay = () => {
         const filteredMovies = allMovies.filter((movie) =>
           movie.title.toLowerCase().includes(searchQuery.toLowerCase())
         );
-
-        const sortData = filteredMovies.sort(
-          (a, b) => Number(b.year) - Number(a.year)
-        );
-        setMovies(sortData);
+        setMovies(filteredMovies);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
