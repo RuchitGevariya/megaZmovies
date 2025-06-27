@@ -50,8 +50,8 @@ const result=await cloudinary.uploader.upload(file.tempFilePath,{
 
 export const listAllPicture = async (req, res) => {
   try {
-    const allData = await Movies.find();
-    if (allData.length <= 0) {
+    const allData = await Movies.find().sort({createdAt:-1});
+    if (!allData.length ) {
       return res.status(400).json({
         success: false,
         message: "No Picture available",
