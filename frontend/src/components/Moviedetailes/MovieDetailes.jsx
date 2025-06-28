@@ -11,6 +11,7 @@ const MovieDetailes = () => {
     title,
     year,
     image,
+    bannerImage,
     description,
     genres,
     category,
@@ -55,7 +56,7 @@ const MovieDetailes = () => {
       <Navbar />
       <div className="movie-details-page-wrapper">
          <div className="movie-details-hero">
-  <img src={image} alt={title} className="movie-details-hero-img" />
+  <img src={bannerImage||image} alt={title} className="movie-details-hero-img" />
   <div className="movie-details-hero-overlay">
     <h1>{title}</h1>
     <p>{year} • {duration}</p>
