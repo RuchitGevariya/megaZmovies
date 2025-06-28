@@ -12,26 +12,20 @@ export const addPicture = async (req, res) => {
       });
     }
     // cloudinary images upload
- try{
+      
+ 
 const file=req.files.image;
-const result=await cloudinary.uploader.upload(file.tempFilePath,{
+ const result=await cloudinary.uploader.upload(file.tempFilePath,{
   folder:"megaZmoviesposter",
   resource_type:"image"
 })
-
+console.log("that movie image",result)
 const file2=req.files.banner;
-const result2=await cloudinary.uploader.upload(file2.tempFilePath,{
+ const result2=await cloudinary.uploader.upload(file2.tempFilePath,{
   folder:"megaZmoviesbanner",
    resource_type:"image"
 })
-
- } catch(cloudError){
- console.error("Cloudinary upload failed", cloudError);
-  return res.status(500).json({
-    success: false,
-    message: "Failed to upload poster image",
-  });
- }
+console.log("that banner image",result2)
     // Convert year to number if needed
     const numericYear = Number(year);
     // Save the new picture
@@ -48,7 +42,6 @@ const result2=await cloudinary.uploader.upload(file2.tempFilePath,{
     });
 
     await newPicture.save();
-    console.log(newPicture)
  return res.status(201).json({
       success: true,
       message: "Picture added successfully",
