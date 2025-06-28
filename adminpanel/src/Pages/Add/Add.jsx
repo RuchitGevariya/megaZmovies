@@ -2,35 +2,56 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import config from "../../Config";
+import toast from "react-hot-toast";
 function Add() {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState(null);
   const [image, setImage] = useState(null);
+  const [bannerImage,setBannerImage]=useState(null)
   const [preview, setPreview] = useState(null);
   const [description, setDescription] = useState("");
   const [genres, setGenres] = useState("");
   const [category, setcategory] = useState("");
   const [duration, setDuration] = useState("");
   const [driveId, setDriveId] = useState("");
-  const [message, setMessage] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false); // prevent double submission
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
     setPreview(URL.createObjectURL(file));
   };
+const handleBannerImage =(e) =>{
+      const file = e.target.files[0];
+    setBannerImage(file);
+}
 
+const restFormData=()=>{
+     setTitle("");
+      setYear(null);
+      setImage(null);
+      setBannerImage(null)
+      setPreview(null);
+      setDescription("");
+      setGenres("");
+      setcategory("")
+      setDuration("");
+      setDriveId("");
+      document.getElementById("image").value = "";
+document.getElementById("bannerImage").value = "";
+}
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (isSubmitting) return;
+    if(!title||!year||!genres||!image||!bannerImage||!description||!category||!duration||!driveId) return toast.error("All filed are required")
     setIsSubmitting(true);
 
     const formData = new FormData();
     formData.append("title", title);
     formData.append("year", year);
     formData.append("image", image);
+    formData.append("banner",bannerImage)
     formData.append("description", description);
     formData.append("genres", genres);
     formData.append("category", category);
@@ -45,34 +66,14 @@ function Add() {
         }
       );
 
-      setMessage({ type: "success", text: "Movie added successfully!" });
-
-      setTitle("");
-      setYear(null);
-      setImage(null);
-      setPreview(null);
-      setDescription("");
-      setGenres("");
-      setcategory("")
-      setDuration("");
-      setDriveId("");
-      document.getElementById("image").value = "";
-
+     toast.success("Movie Added successfully")
+    restFormData()
       setTimeout(() => {
-        setMessage(null);
         setIsSubmitting(false);
-        // navigate("/list");
       }, 3000);
     } catch (error) {
-      setMessage({
-        type: "error",
-        text:
-          error.response?.data?.message ||
-          "There was an error adding the movie!",
-      });
-
+     toast.error("Internal Sever Error")
       setTimeout(() => {
-        setMessage(null);
         setIsSubmitting(false);
       }, 5000);
     }
@@ -81,21 +82,8 @@ function Add() {
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Add New Movie</h2>
-
-      {message && (
-        <div
-          className={`alert alert-${
-            message.type === "success" ? "success" : "danger"
-          }`}
-          role="alert"
-        >
-          {message.text}
-        </div>
-      )}
-
       <form
         onSubmit={handleSubmit}
-        className=""
       >
         <div className="row">
           <div className="col-md-6">
@@ -188,10 +176,34 @@ function Add() {
                 required
               />
             </div>
-            {preview && (
+              {preview && (
               <div className="text-center">
                 <img
                   src={preview}
+                  alt="Preview"
+                  className="img-thumbnail"
+                  style={{
+                    width: "100%",
+                    maxHeight: "200px",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            )}
+             <div className="mb-3">
+              <label htmlFor="bannerImage" className="form-label">BannerImage:</label>
+              <input
+                type="file"
+                id="bannerImage"
+                className="form-control"
+                onChange={handleBannerImage}
+                required
+              />
+            </div>
+            {bannerImage && (
+              <div className="text-center">
+                <img
+                  src={URL.createObjectURL(bannerImage)}
                   alt="Preview"
                   className="img-thumbnail"
                   style={{

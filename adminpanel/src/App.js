@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {Toaster} from "react-hot-toast"
 import Add from "./Pages/Add/Add"; // Import your Add component
 import PictureGallery from "./Pages/list/List";
 import Navbar from "./components/Navbar/Navbar";
@@ -13,6 +14,10 @@ function App() {
 
   return (
     <>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <Navbar />
       <hr />
       <div className="main-layout">

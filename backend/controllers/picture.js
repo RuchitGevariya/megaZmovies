@@ -5,27 +5,42 @@ import cloudinary from "../Cloudinary/config.js";
 export const addPicture = async (req, res) => {
   try {
     const { title, year, description, genres, duration, category, driveId } = req.body;
-    if (!title || !description  || !genres || !duration || !driveId || !year||!category||!req.files||!req.files.image){
+    if (!title || !description  || !genres || !duration || !driveId || !year||!category||!req.files||!req.files.image||!req.files.banner){
       return res.status(400).json({
         success: false,
         message: "All fields are required",
       });
     }
- 
+    // cloudinary images upload
+ try{
 const file=req.files.image;
 const result=await cloudinary.uploader.upload(file.tempFilePath,{
   folder:"megaZmoviesposter",
   resource_type:"image"
 })
+
+const file2=req.files.banner;
+const result2=await cloudinary.uploader.upload(file2.tempFilePath,{
+  folder:"megaZmoviesbanner",
+   resource_type:"image"
+})
+
+ } catch(cloudError){
+ console.error("Cloudinary upload failed", cloudError);
+  return res.status(500).json({
+    success: false,
+    message: "Failed to upload poster image",
+  });
+ }
     // Convert year to number if needed
     const numericYear = Number(year);
-
     // Save the new picture
     const newPicture = new Movies({
       title,
       year: numericYear,
       description,
       image:result.secure_url,
+      bannerImage:result2.secure_url,
       genres,
       category,
       duration,
@@ -33,6 +48,7 @@ const result=await cloudinary.uploader.upload(file.tempFilePath,{
     });
 
     await newPicture.save();
+    console.log(newPicture)
  return res.status(201).json({
       success: true,
       message: "Picture added successfully",
