@@ -54,28 +54,18 @@ const MovieDetailes = () => {
     <>
       <Navbar />
       <div className="movie-details-page-wrapper">
-        <div className="movie-details-main">
-          <img src={image} alt={title} className="movie-details-poster-img" />
-          <div className="release-info">
-            <h2 className="movie-details-heading">{title}</h2>
-            <p>
-              <strong className="red">Year:</strong> {year}
-            </p>
-            <p>
-              <strong className="red">Genres:</strong> {genres}
-            </p>
-            <p>
-              <strong className="red">Category:</strong> {category}
-            </p>
-            <p>
-              <strong className="red">Duration:</strong> {duration}
-            </p>
-            <p>
-              <strong className="red">Description:</strong> {description}
-            </p>
-          </div>
-        </div>
-
+         <div className="movie-details-hero">
+  <img src={image} alt={title} className="movie-details-hero-img" />
+  <div className="movie-details-hero-overlay">
+    <h1>{title}</h1>
+    <p>{year} • {duration}</p>
+  </div>
+</div>
+{/* details-content */}
+<div class="movie-details-content">
+  <div class="movie-description">
+    <p>{description}</p>
+  </div>
         <div className="download-section">
           <h2>Download Links</h2>
           <div className="download-buttons">
@@ -90,6 +80,7 @@ const MovieDetailes = () => {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
 

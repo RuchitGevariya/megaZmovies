@@ -13,7 +13,6 @@ export const addPicture = async (req, res) => {
     }
     // cloudinary images upload
       
- 
 const file=req.files.image;
  const result=await cloudinary.uploader.upload(file.tempFilePath,{
   folder:"megaZmoviesposter",

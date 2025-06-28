@@ -57,7 +57,6 @@ document.getElementById("bannerImage").value = "";
     formData.append("category", category);
     formData.append("duration", duration);
     formData.append("driveId", driveId);
-
     try {
       const response = await axios.post(
         `${config.API_URL}/api/admin/addPicture`,
