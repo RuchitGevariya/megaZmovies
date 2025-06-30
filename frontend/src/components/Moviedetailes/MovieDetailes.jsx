@@ -55,40 +55,55 @@ const MovieDetailes = () => {
     <>
       <Navbar />
       <div className="movie-details-page-wrapper">
-         <div className="movie-details-hero">
-  <img src={bannerImage||image} alt={title} className="movie-details-hero-img" />
-  <div className="movie-details-hero-overlay">
-    <h1>{title}</h1>
-    <p>{year} • {duration}</p>
-  </div>
-</div>
-{/* details-content */}
-<div class="movie-details-content">
-  <div class="movie-description">
-    <p>{description}</p>
-  </div>
-        <div className="download-section">
-          <h2>Download Links</h2>
-          <div className="download-buttons">
-            {qualityOptions.map((quality, index) => (
-              <div key={index} className="download-option">
-                <a
-                  href={`https://drive.google.com/uc?export=download&id=${driveId}`}
-                  className="movie-details-download-btn"
-                >
-                  {quality} - Download
-                </a>
-              </div>
-            ))}
+        <div className="movie-details-hero">
+          <img
+            src={bannerImage || image}
+            alt={title}
+            className="movie-details-hero-img"
+          />
+          <div className="movie-details-hero-overlay">
+            <h1>{title}</h1>
+            <p>
+              {year} • {duration}
+            </p>
           </div>
         </div>
+        {/* details-content */}
+        <div class="movie-details-content">
+          <div class="movie-genres">
+            <p className="genres-text">
+              {genres
+                .split(",")
+                .map((g) => g.trim())
+                .join(" | ")}
+              
+            </p>
+          </div>
+
+          <div class="movie-description">
+            <p>{description}</p>
+          </div>
+          <div className="download-section">
+            <h2>Download Links</h2>
+            <div className="download-buttons">
+              {qualityOptions.map((quality, index) => (
+                <div key={index} className="download-option">
+                  <a
+                    href={`https://drive.google.com/uc?export=download&id=${driveId}`}
+                    className="movie-details-download-btn"
+                  >
+                    {quality} - Download
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="related-movies-section">
-         <h2 className="related-heading">Related Movies</h2>
+        <h2 className="related-heading">More Like This</h2>
         <div className="related-movie-card-container">
-         
           {relatedMovies.map((movie, index) => (
             <Moviecard key={index} {...movie} />
           ))}
