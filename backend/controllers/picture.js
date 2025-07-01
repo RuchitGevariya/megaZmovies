@@ -38,7 +38,7 @@ console.log("that banner image",result2)
       category,
       duration,
       driveId,
-      thrillerId
+     ThrillerId:thrillerId
     });
 
     await newPicture.save();
