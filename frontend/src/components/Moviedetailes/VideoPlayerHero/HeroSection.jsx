@@ -76,7 +76,7 @@ const HeroSection = () => {
             allowFullScreen
           ></iframe>
           </div>
-       
+  
           <button
             onClick={handleCloseTrailer}
             style={{

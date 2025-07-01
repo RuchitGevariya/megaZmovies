@@ -38,7 +38,7 @@ const MovieDetailes = () => {
       })
       .catch((err) => console.log(err));
     window.scrollTo(0, 0);
-  }, [category, title]);
+  }, [category, title]);  
 
   if (!title) {
     return (

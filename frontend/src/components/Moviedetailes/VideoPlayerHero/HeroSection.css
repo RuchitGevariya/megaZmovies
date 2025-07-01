@@ -75,7 +75,7 @@
 
 .hero-play-button:focus {
   outline: 2px solid #fff;
-}
+} 
 
 @media (max-width: 600px) {
   .iframe-container {
