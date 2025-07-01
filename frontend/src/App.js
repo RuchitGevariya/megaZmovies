@@ -8,6 +8,7 @@ import South from "./Pages/South/South";
 import Hollywood from "./Pages/Hollywood/Hollywood";
 import Animation from "./Pages/Animation/Animation";
 import Bollywood from "./Pages/Bollywood/Bollywood";
+
 const App = () => {
   return (
     <>

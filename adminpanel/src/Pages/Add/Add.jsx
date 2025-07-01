@@ -14,6 +14,7 @@ function Add() {
   const [category, setcategory] = useState("");
   const [duration, setDuration] = useState("");
   const [driveId, setDriveId] = useState("");
+  const [thrillerId, setThrillerId] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const handleFileChange = (e) => {
@@ -37,6 +38,7 @@ const restFormData=()=>{
       setcategory("")
       setDuration("");
       setDriveId("");
+      setThrillerId("")
       document.getElementById("image").value = "";
 document.getElementById("bannerImage").value = "";
 }
@@ -57,6 +59,7 @@ document.getElementById("bannerImage").value = "";
     formData.append("category", category);
     formData.append("duration", duration);
     formData.append("driveId", driveId);
+     formData.append("thrillerId", thrillerId);
     try {
       const response = await axios.post(
         `${config.API_URL}/api/admin/addPicture`,
@@ -162,6 +165,17 @@ document.getElementById("bannerImage").value = "";
                 className="form-control"
                 value={driveId}
                 onChange={(e) => setDriveId(e.target.value)}
+                required
+              />
+            </div>
+                <div className="mb-3">
+              <label htmlFor="driveId" className="form-label">Youtub Thriller Id:</label>
+              <input
+                type="text"
+                id="TriId"
+                className="form-control"
+                value={thrillerId}
+                onChange={(e) => setThrillerId(e.target.value)}
                 required
               />
             </div>

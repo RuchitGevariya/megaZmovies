@@ -5,60 +5,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* Flex container for poster + info */
-.movie-details-main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Poster image */
-.movie-details-poster-img {
-  width: 100%;
-  max-width: 300px;
-  height: 450px;
-  object-fit: cover;
-  display: block;
-  margin: 10px auto;
-  border-radius: 4px;
-}
-
-.movie-details-hero {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 6px;
-}
-
-.movie-details-hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-
-.movie-details-hero-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  color: #fff;
-}
-
-.movie-details-hero-overlay h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.movie-details-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  width: 100%;
-}
 
 .movie-genres {
   font-size: 0.95rem;
@@ -139,6 +85,7 @@
   position: relative;
     top: 2rem;
 }
+
 
 @media (max-width: 768px) {
   .related-movie-card-container {

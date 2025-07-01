@@ -1,0 +1,84 @@
+/* Poster image */
+.movie-details-poster-img {
+  width: 100%;
+  max-width: 300px;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+
+.movie-details-hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.movie-details-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.movie-details-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #fff;
+}
+
+.movie-details-hero-overlay h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.movie-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+.iframe-container {
+  position: relative;
+  width: 100%;
+  max-width: 720px; /* limit width on large screens */
+  aspect-ratio: 16 / 9; /* better than padding-bottom hack */
+  margin: auto;
+}
+
+
+.hero-play-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero-play-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.hero-play-button:focus {
+  outline: 2px solid #fff;
+}
+
+@media (max-width: 600px) {
+  .iframe-container {
+    max-width: 100%;
+  }
+}

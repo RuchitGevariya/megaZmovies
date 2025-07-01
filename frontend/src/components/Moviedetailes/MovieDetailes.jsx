@@ -5,23 +5,22 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import Moviecard from "../Moviescard/Moviecard";
+import HeroSection from "./VideoPlayerHero/HeroSection";
+
 const MovieDetailes = () => {
   const location = useLocation();
   const {
     title,
-    year,
-    image,
-    bannerImage,
     description,
     genres,
     category,
-    duration,
     driveId,
   } = location.state || {};
   const qualityOptions = ["480p", "720p", "1080p", "4K"];
 
   // related movies suggestions
   const [relatedMovies, setRelatedMovies] = useState([]);
+
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/public/listAllPicture`)
@@ -55,19 +54,7 @@ const MovieDetailes = () => {
     <>
       <Navbar />
       <div className="movie-details-page-wrapper">
-        <div className="movie-details-hero">
-          <img
-            src={bannerImage || image}
-            alt={title}
-            className="movie-details-hero-img"
-          />
-          <div className="movie-details-hero-overlay">
-            <h1>{title}</h1>
-            <p>
-              {year} • {duration}
-            </p>
-          </div>
-        </div>
+        <HeroSection />
         {/* details-content */}
         <div class="movie-details-content">
           <div class="movie-genres">
@@ -76,7 +63,6 @@ const MovieDetailes = () => {
                 .split(",")
                 .map((g) => g.trim())
                 .join(" | ")}
-              
             </p>
           </div>
 
