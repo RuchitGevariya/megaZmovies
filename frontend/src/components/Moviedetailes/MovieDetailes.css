@@ -86,7 +86,11 @@
     top: 2rem;
 }
 
-
+@media (max-width: 600px) {
+  .movie-details-page-wrapper {
+    padding: 10px;
+  }
+}
 @media (max-width: 768px) {
   .related-movie-card-container {
     display: flex;
