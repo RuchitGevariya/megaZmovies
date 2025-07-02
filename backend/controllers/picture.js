@@ -4,8 +4,8 @@ import cloudinary from "../Cloudinary/config.js";
 
 export const addPicture = async (req, res) => {
   try {
-    const { title, year, description, genres, duration, category, driveId,thrillerId } = req.body;
-    if (!title || !description  || !genres || !duration ||!thrillerId|| !driveId || !year||!category||!req.files||!req.files.image||!req.files.banner){
+    const { title, year, description, genres, duration, category, driveId,trailerId } = req.body;
+    if (!title || !description  || !genres || !duration ||!trailerId|| !driveId || !year||!category||!req.files||!req.files.image||!req.files.banner){
       return res.status(400).json({
         success: false,
         message: "All fields are required",
@@ -38,7 +38,7 @@ console.log("that banner image",result2)
       category,
       duration,
       driveId,
-     thrillerId
+     trailerId
     });
 
     await newPicture.save();

@@ -11,7 +11,7 @@ const HeroSection = () => {
       image,
       bannerImage,
       duration,
-      thrillerId
+     trailerId
     } = location.state || {};
     
   
@@ -70,7 +70,7 @@ const HeroSection = () => {
               width: "100%",
               height: "100%",
             }}
-            src={thrillerId ?`https://www.youtube.com/embed/${thrillerId}?autoplay=0&mute=0`:'https://www.youtube.com/embed/r3P9oUn_z-c?autoplay=0&mute=0'}
+            src={thrillerId ?`https://www.youtube.com/embed/${trailerId}?autoplay=0&mute=0`:'https://www.youtube.com/embed/r3P9oUn_z-c?autoplay=0&mute=0'}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
