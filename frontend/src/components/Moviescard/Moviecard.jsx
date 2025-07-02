@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import "./Moviecard.css";
 
 
-const Moviecard = ({ title, year, image, description, genres, duration, category ,driveId,bannerImage}) => {
+const Moviecard = ({ title, year, image, description, genres, duration, category ,driveId,bannerImage,thrillerId}) => {
   const navigate = useNavigate();
   // Function to navigate to details page
  
   const handleClick = () => {
     navigate(`/movies/${title.replace(/\s+/g, "-").toLowerCase()}`, {
-      state: { title, year, image, description, genres,category, duration,driveId,bannerImage},
+      state: { title, year, image, description, genres,category, duration,driveId,bannerImage,thrillerId},
     });
   };
 
