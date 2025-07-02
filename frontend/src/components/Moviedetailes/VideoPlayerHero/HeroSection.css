@@ -1,18 +1,10 @@
 /* Poster image */
-.movie-details-poster-img {
-  width: 100%;
-  max-width: 300px;
-  height: 450px;
-  object-fit: cover;
-  display: block;
-  margin: 10px auto;
-  border-radius: 4px;
-}
+
 
 .movie-details-hero {
   position: relative;
   width: 100%;
-  height: 300px;
+    aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 6px;
 }
@@ -78,7 +70,20 @@
 } 
 
 @media (max-width: 600px) {
+    .movie-details-hero {
+    aspect-ratio: 441 / 207; 
+  }
   .iframe-container {
     max-width: 100%;
+  }
+    .movie-details-hero-overlay h1 {
+    font-size: 1.2rem;
+  }
+    .movie-details-hero-overlay p {
+    font-size: 0.9rem;
+  }
+  .hero-play-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 }
