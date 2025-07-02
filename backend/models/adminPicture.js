@@ -10,7 +10,7 @@ const pictureSchema = new mongoose.Schema(
     genres: { type: String, required: true },
     duration: { type: String, required: true },
     driveId: { type: String, required: true },
-    ThrillerId: { type: String, required: true },
+    thrillerId: { type: String, required: true },
     category: { type: String ,required: true }
   },
   {
