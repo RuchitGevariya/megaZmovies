@@ -16,7 +16,7 @@ import {fileURLToPath} from "url"
 import path from "path"
 import { log } from "console";
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3002','https://mega-zmovies-zols.vercel.app','https://mega-zmovies.vercel.app/'],  
+  origin: ['http://localhost:3000', 'http://localhost:3002', 'https://mega-zmovies-zols.vercel.app', 'https://mega-zmovies.vercel.app'],  
   credentials: true                
 }));
 
