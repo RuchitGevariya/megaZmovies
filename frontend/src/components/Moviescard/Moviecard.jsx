@@ -16,7 +16,7 @@ const Moviecard = ({ title, year, image, description, genres, duration, category
   return (
     <div className="movie-card"  onClick={handleClick}>
       <img src={image} alt={title} 
-      className="movie-image"  layoutId={`poster-${title}`}/>
+      className="movie-image" width="300" height="450" layoutId={`poster-${title}`}/>
   
       <div className="overlay"></div>
       <div className="movie-info">

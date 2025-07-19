@@ -1,6 +1,6 @@
 import {React,useState,useEffect}from 'react'
 import "./Silder.css"
-import assets from "../../assets/frontend_assets/assets"
+
 import axios from "axios"
 const Silder = () => {
   const [banners, setBanners] = useState([]);
@@ -18,6 +18,8 @@ const Silder = () => {
   }, []);
   return (
     <div>
+
+
     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-indicators">
         {banners.map((_, index) => (
