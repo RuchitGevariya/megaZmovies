@@ -30,7 +30,7 @@ export async function handleLogin(req, res) {
     secure:true,
     sameSite:'None',
      path: '/',
- domain: 'megazmovies.onrender.com',
+ domain:'https://megazmovies1.onrender.com',
   maxAge:30*60*1000
   });
   return res.status(200).json({ message: "login successfully", success: true });
@@ -49,7 +49,7 @@ res.clearCookie("uid", {
   secure: true,
   sameSite: 'None',
   path: '/',
-  domain: 'megazmovies.onrender.com'
+  domain: 'https://megazmovies1.onrender.com'
 });
 console.log("cookie after logout",req.cookies);
 
