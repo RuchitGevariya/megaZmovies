@@ -44,11 +44,8 @@ document.getElementById("bannerImage").value = "";
 }
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (isSubmitting) return;
+ setIsSubmitting(true);
     if(!title||!year||!genres||!image||!bannerImage||!description||!category||!duration||!driveId) return toast.error("All filed are required")
-    setIsSubmitting(true);
-
     const formData = new FormData();
     formData.append("title", title);
     formData.append("year", year);
@@ -70,14 +67,10 @@ document.getElementById("bannerImage").value = "";
 
      toast.success("Movie Added successfully")
     restFormData()
-      setTimeout(() => {
-        setIsSubmitting(false);
-      }, 3000);
     } catch (error) {
      toast.error("Internal Sever Error")
-      setTimeout(() => {
-        setIsSubmitting(false);
-      }, 5000);
+    }finally{
+      setIsSubmitting(false)
     }
   };
 

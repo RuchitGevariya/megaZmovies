@@ -15,18 +15,24 @@ import fileupload from "express-fileupload"
 import {fileURLToPath} from "url"
 import path from "path"
 import { log } from "console";
-app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3002','https://megazmovies-1.onrender.com','https://mega-zmovies-zols.vercel.app'],  
-  credentials: true                
-}));
+app.use(
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:3002',
+      'https://mega-zmovies-zols.vercel.app',
+      'https://mega-zmovies.vercel.app',
+    ],
+    credentials: true,
+  })
+);
 
 //path
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-app.use(express.json()); 
 app.use(cookies());
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //no need but stille to be used

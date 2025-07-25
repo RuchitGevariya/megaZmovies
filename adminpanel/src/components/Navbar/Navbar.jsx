@@ -4,30 +4,28 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import config from "../../Config";
+import toast from "react-hot-toast";
 const Navbar = () => {
  const { isAdminLoggedIn, setIsAdminLoggedIn } = useAuth(); 
 
   const navigate = useNavigate();
 
 const handleLogout = async () => {
-  console.log("Logging out...");
 
   try {
     const res = await axios.get(`${config.API_URL}/api/auth/logout`, {
       withCredentials: true,
     });
 
-    console.log("Logout response:", res.data);
-
     if (res.data?.success) {
       setIsAdminLoggedIn(false);
       navigate("/login");
+      toast.success("Logout success")
     }
-  } catch (err) {
-    console.error("Logout error:", err);
+  } catch (error) {
+    console.error("Logout error:", error);
   }
 };
-
 
   const handleLogin = () => {
     navigate("/login");
@@ -41,8 +39,6 @@ const handleLogout = async () => {
     Mega Z<span className="text-accent"> Movies</span>
   </h2>
 </div>
-
-
       {isAdminLoggedIn === null ? (
         <div className="loading-text">Checking auth...</div>
       ) : isAdminLoggedIn ? (

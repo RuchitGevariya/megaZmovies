@@ -36,6 +36,27 @@
 .login-container button:hover {
   background: #0056b3;
 }
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 60px; /* space for the toggle button */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #007bff;
+  font-weight: bold;
+  user-select: none;
+}
+
 
 @media (max-width: 480px) {
   .login-container {
