@@ -20,7 +20,7 @@ app.use(
     origin: [
       'http://localhost:3000',
       'http://localhost:3002',
-      'https://mega-zmovies-zols.vercel.app',
+      'https://mega-zmovies-vyzg.vercel.app',
       'https://mega-zmovies.vercel.app',
     ],
     credentials: true,
