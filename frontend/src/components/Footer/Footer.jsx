@@ -19,7 +19,7 @@ const Footer = () => {
     }
 try{
     await axios.post(
-      `${process.env.REACT_APP_API_URL}/subscribe/news-letter`,
+      `${import.meta.env.VITE_API_URL}/subscribe/news-letter`,
       { email },
       { withCredentials: true }
     );

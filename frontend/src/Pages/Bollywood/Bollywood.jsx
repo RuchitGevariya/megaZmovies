@@ -12,7 +12,7 @@ const Bollywood = () => {
       const moviesPerPage = 12;
   useEffect(() => {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/Api/public/listAllPicture`)
+        .get(`${import.meta.env.VITE_API_URL}/Api/public/listAllPicture`)
         .then((res) => {
           const filtered = res.data.data
             .filter((movie) => movie.category.toLowerCase() === "bollywood")

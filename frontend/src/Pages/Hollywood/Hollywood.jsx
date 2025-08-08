@@ -14,7 +14,7 @@ const Hollywood = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/Api/public/listAllPicture`)
+      .get(`${import.meta.env.VITE_API_URL}/Api/public/listAllPicture`)
       .then((res) => {
         const filtered = res.data.data
           .filter((movie) => movie.category.toLowerCase() === 'hollywood')

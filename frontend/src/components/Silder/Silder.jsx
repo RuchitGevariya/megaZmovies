@@ -8,7 +8,7 @@ const Silder = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/banner/allbanner`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/banner/allbanner`);
         setBanners(res.data.banner); 
       } catch (err) {
         console.error('Failed to load banners', err);

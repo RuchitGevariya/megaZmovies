@@ -23,7 +23,7 @@ const MovieDetailes = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/public/listAllPicture`)
+      .get(`${import.meta.env.VITE_API_URL}/api/public/listAllPicture`)
       .then((res) => {
         const related = res.data.data
           .filter(

@@ -4,7 +4,7 @@ import Moviecard from "../Moviescard/Moviecard";
 import axios from "axios";
 import "./CardDisplay.css";
 import SkeletonCard from "../SkeletonCard/SkeletonCard";
-
+import { Pagination } from "antd";
 const CardDisplay = () => {
   const { searchQuery } = useSearch();
   const [movies, setMovies] = useState([]);
@@ -16,7 +16,7 @@ const CardDisplay = () => {
     const fetchMovies = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/public/listAllPicture`
+          `${import.meta.env.VITE_API_URL}/api/public/listAllPicture`
         );
         const allMovies = res.data.data;
 
@@ -35,7 +35,6 @@ const CardDisplay = () => {
   useEffect(() => {
     console.log("that is search result:", movies);
   }, [movies]);
-  const totalPages = Math.ceil(movies.length / moviesPerPage);
   const startIndex = (currentPage - 1) * moviesPerPage;
   const currentMovies = movies.slice(startIndex, startIndex + moviesPerPage);
 
@@ -44,21 +43,6 @@ const CardDisplay = () => {
     window.scrollTo(0, 0);
   };
 
-  const getPageNumbers = () => {
-    const pages = [];
-    let start = Math.max(1, currentPage - 2);
-    let end = Math.min(totalPages, start + 4);
-
-    if (end - start < 4) {
-      start = Math.max(1, end - 4);
-    }
-
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
-    }
-
-    return pages;
-  };
 
   return (
     <>
@@ -83,34 +67,16 @@ const CardDisplay = () => {
       </div>
 
       <div className="pagination-wrapper">
-        <button
-          className="pagination-btn"
-          disabled={currentPage === 1}
-          onClick={() => handlePageChange(currentPage - 1)}
-        >
-          Prev
-        </button>
-
-        {getPageNumbers().map((number) => (
-          <button
-            key={number}
-            className={`pagination-btn ${
-              currentPage === number ? "active" : ""
-            }`}
-            onClick={() => handlePageChange(number)}
-          >
-            {number}
-          </button>
-        ))}
-
-        <button
-          className="pagination-btn"
-          disabled={currentPage === totalPages}
-          onClick={() => handlePageChange(currentPage + 1)}
-        >
-          Next
-        </button>
+        <Pagination
+          current={currentPage}
+          pageSize={moviesPerPage}
+          total={movies.length}
+          onChange={handlePageChange}
+          showSizeChanger={false} // hide "page size" dropdown
+          showQuickJumper
+        />
       </div>
+     
     </>
   );
 };
