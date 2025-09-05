@@ -11,13 +11,11 @@ import { FaSearch, FaBars, FaTimes, FaTv, FaLink } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useSearch } from "../../Context/SearchContext";
-
 import "./Navbar.css";
 export default function CustomNavbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { setSearchQuery } = useSearch();
-  const [searchInput, setSearchInput] = useState("");
-
+  const {searchQuery,setSearchQuery } = useSearch();
+ 
   return (
     <Navbar expand="md" className="px-3 navbar">
       <Container>
@@ -61,17 +59,15 @@ export default function CustomNavbar() {
               type="search"
               placeholder="Search..."
               className="me-2"
-              value={searchInput}
+              value={searchQuery}
               onChange={(e) => {
-                setSearchInput(e.target.value);
-                setSearchQuery(e.target.value);
+                setSearchQuery(e.target.value)
               }}
             />
-            {searchInput && (
+            {searchQuery && (
               <Button
                 variant="outline-secondary"
                 onClick={() => {
-                  setSearchInput("");
                   setSearchQuery("");
                 }}
               >

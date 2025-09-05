@@ -5,7 +5,6 @@ import cloudinary from "../Cloudinary/config.js";
 
 
 router.post("/upload",async(req,res)=>{
- 
   try {
  const {title}=req.body;
  if(!title||!req.files||!req.files.image){

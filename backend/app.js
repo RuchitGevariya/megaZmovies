@@ -14,12 +14,12 @@ import {CheckAdmin} from "./middleware/auth.js"
 import fileupload from "express-fileupload"
 import {fileURLToPath} from "url"
 import path from "path"
-import { log } from "console";
+
 app.use(
   cors({
     origin: [
       'http://localhost:3000',
-      'http://localhost:3002',
+      'http://localhost:5173',
       'https://mega-zmovies-zjum.vercel.app',
       'https://mega-zmovies-zols.vercel.app',
     ],
