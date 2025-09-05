@@ -19,7 +19,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:3000',
-      'http://localhost:5173',
+      'http://localhost:3002',
       'https://mega-zmovies-zjum.vercel.app',
       'https://mega-zmovies-zols.vercel.app',
     ],
