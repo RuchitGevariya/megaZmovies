@@ -5,6 +5,7 @@ import axios from "axios";
 import "./CardDisplay.css";
 import SkeletonCard from "../SkeletonCard/SkeletonCard";
 import { Pagination } from "antd";
+import { use } from "react";
 const CardDisplay = () => {
   const { searchQuery } = useSearch();
   const [movies, setMovies] = useState([]);
@@ -12,13 +13,21 @@ const CardDisplay = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const moviesPerPage = 12;
   const [loading, setLoading] = useState(false);
-
+const [debounceQuery,setDebounceQuery]=useState(searchQuery)
+useEffect(()=>{
+ const handler=setTimeout(()=>{
+     setDebounceQuery(searchQuery)
+     console.log(searchQuery);
+     
+ },500)
+ return ()=>clearTimeout(handler)
+},[searchQuery])
   useEffect(() => {
     const fetchMovies = async () => {
       setLoading(true)
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/public/listAllPicture?page=${currentPage}&limit=${moviesPerPage}&search=${searchQuery}`
+          `${import.meta.env.VITE_API_URL}/api/public/listAllPicture?page=${currentPage}&limit=${moviesPerPage}&search=${debounceQuery}`
         );
         setMovies(res.data.data);
         settotal(res.data.total)
@@ -31,7 +40,7 @@ const CardDisplay = () => {
       }
     };
     fetchMovies();
-  }, [currentPage,searchQuery]);
+  }, [currentPage,debounceQuery]);
  
 
   const handlePageChange = (pageNumber) => {
