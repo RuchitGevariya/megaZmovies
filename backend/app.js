@@ -14,6 +14,7 @@ import {CheckAdmin} from "./middleware/auth.js"
 import fileupload from "express-fileupload"
 import {fileURLToPath} from "url"
 import path from "path"
+import { Movies } from "./models/adminPicture.js";
 
 app.use(
   cors({
@@ -45,6 +46,7 @@ app.use(fileupload({
 
 //routing for user
 // Public routes
+
 app.use("/api/public", pictureRouter);  
 app.use("/api/banner", bannerRouter);
 app.use("/subscribe",newsLetterRouter)

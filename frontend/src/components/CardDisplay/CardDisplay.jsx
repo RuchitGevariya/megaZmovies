@@ -11,10 +11,11 @@ const CardDisplay = () => {
   const [total,settotal]=useState(0)
   const [currentPage, setCurrentPage] = useState(1);
   const moviesPerPage = 12;
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
+      setLoading(true)
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_API_URL}/api/public/listAllPicture?page=${currentPage}&limit=${moviesPerPage}&search=${searchQuery}`
@@ -24,6 +25,9 @@ const CardDisplay = () => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
+      }
+      finally{
+        setLoading(false)
       }
     };
     fetchMovies();

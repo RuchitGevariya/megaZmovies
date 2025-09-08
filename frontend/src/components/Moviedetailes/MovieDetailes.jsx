@@ -43,16 +43,13 @@ const MovieDetailes = () => {
   if (!title) {
     return (
       <>
-        <Navbar />
         <h2>Movie Not Found</h2>
-        <Footer />
       </>
     );
   }
 
   return (
     <>
-      <Navbar />
       <div className="movie-details-page-wrapper">
         <HeroSection />
         {/* details-content */}
@@ -95,8 +92,6 @@ const MovieDetailes = () => {
           ))}
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

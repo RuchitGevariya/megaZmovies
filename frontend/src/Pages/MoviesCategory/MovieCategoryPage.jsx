@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import SkeletonCard from '../../components/SkeletonCard/SkeletonCard';
 import axios from 'axios';
 import Moviecard from '../../components/Moviescard/Moviecard';
+
 const MovieCategoryPage = () => {
   const {category}=useParams()
  const moviesPerPage=12
@@ -26,10 +27,11 @@ const MovieCategoryPage = () => {
       }
     };
     fetchMoviesCategoryWise();
-
-  },[category])
+    console.log(category)
+  },[category,currentPage])
   const handlePageChange=(page)=>{
    setCurrentPage(page)
+      window.scrollTo(0, 0);
   }
   return (
     <div>

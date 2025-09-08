@@ -4,7 +4,5 @@ import { addPicture, listAllPicture,listLatestPictures} from "../controllers/pic
 // Apply upload middleware to this route
 pictureRouter.post("/addPicture", addPicture);
 pictureRouter.get("/listAllPicture", listAllPicture);
-pictureRouter.get("/latestPicture",listLatestPictures)
-
-
+pictureRouter.get("/latestPicture",listLatestPictures);
 export default pictureRouter;
