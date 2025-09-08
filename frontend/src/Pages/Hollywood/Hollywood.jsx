@@ -52,8 +52,6 @@ const Hollywood = () => {
 
   return (
     <div>
-      <CustomNavbar />
-
       <div className="movie-card-container">
           {loading
                         ? Array.from({ length: 4 }).map((_, index) => (
@@ -91,8 +89,6 @@ const Hollywood = () => {
           Next
         </button>
       </div>
-
-      <Footer />
     </div>
   );
 };

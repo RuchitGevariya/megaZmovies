@@ -82,18 +82,23 @@ export const listAllPicture = async (req, res) => {
     const pageNumber = Number(req.query.page) || 1;
     const pageLimt = Number(req.query.limit) || 12;
     const Search = req.query.search || "";
-
+    const Category = req.query.category || "";
     const skip = (pageNumber - 1) * pageLimt;
 
     //bulid filter
-    const filter = Search ? {title:{ $regex:Search,$options:"i"} } : {};
-        const totalcount = await Movies.countDocuments(filter);
-
+    const filter = {};
+    if (Search) {
+      filter.title = { $regex: Search, $options: "i" };
+    }
+    if (Category) {
+      filter.category = Category;
+    }
+    const totalcount = await Movies.countDocuments(filter);
     const allData = await Movies.find(filter)
       .skip(skip)
       .limit(pageLimt)
-      .sort({ year: -1, createdAt: -1 })
-      
+      .sort({ year: -1, createdAt: -1 });
+
     if (allData.length === 0) {
       return res.status(200).json({
         success: true,

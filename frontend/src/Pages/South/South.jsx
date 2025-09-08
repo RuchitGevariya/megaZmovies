@@ -20,14 +20,14 @@ const South = () => {
   }, []);
   return (
     <div>
-    <CustomNavbar />
+  
       <div className="movie-card-container">
        
         {movies.map((movie, index) => (
           <Moviecard key={index} {...movie} />
         ))}
       </div>
-      <Footer />
+      
     </div>
   );
 };

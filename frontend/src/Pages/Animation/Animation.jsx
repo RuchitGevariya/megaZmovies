@@ -48,8 +48,6 @@ const Animation = () => {
 
   return (
     <div>
-    <CustomNavbar />
-
     <div className="movie-card-container">
       {currentMovies.map((movie, index) => (
         <Moviecard key={index} {...movie} />
@@ -84,7 +82,6 @@ const Animation = () => {
       </button>
     </div>
 
-    <Footer />
   </div>
   )
 }

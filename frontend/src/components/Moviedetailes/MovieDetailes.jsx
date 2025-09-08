@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState,lazy } from "react";
 import { useLocation } from "react-router-dom";
 import "./MovieDetailes.css";
 import Navbar from "../Navbar/Navbar";

@@ -45,7 +45,7 @@ const Bollywood = () => {
     };
   return (
    <div>
-        <CustomNavbar />
+       
      
         <div className="movie-card-container">
           {loading
@@ -84,7 +84,6 @@ const Bollywood = () => {
           Next
         </button>
       </div>
-        <Footer />
       </div>
   )
 }

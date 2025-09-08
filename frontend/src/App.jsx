@@ -1,32 +1,31 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {Toaster} from "react-hot-toast"
 import Home from "./Pages/home/Home";
+import CustomNavbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import MovieDetailes from "./components/Moviedetailes/MovieDetailes";
 import Gujrati from "./Pages/GujratiMovie/Gujrati";
 import South from "./Pages/South/South";
 import Hollywood from "./Pages/Hollywood/Hollywood";
 import Animation from "./Pages/Animation/Animation";
 import Bollywood from "./Pages/Bollywood/Bollywood";
-
+import MovieCategoryPage from "./Pages/MoviesCategory/MovieCategoryPage";
 const App = () => {
   return (
     <>
     <Toaster
   position="top-right"
   reverseOrder={false}
-/>
-    <Router>
+/> 
+   <CustomNavbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gujrati" element={<Gujrati />} />
-        <Route path="/south" element={<South />} />
-        <Route path="/hollywood" element={<Hollywood />} />
-        <Route path="/bollywood" element={<Bollywood />} />
-        <Route path="/animation" element={<Animation/>} />
+        <Route path="/:category" element={<MovieCategoryPage/>} />
         <Route path="/movies/:title" element={<MovieDetailes/>} />
       </Routes>
-    </Router>
+      <Footer/>
+    {/* <Footer/> */}
     </>
   );
 };

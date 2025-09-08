@@ -6,10 +6,8 @@ import Footer from "../../components/Footer/Footer";
 const Home = () => {
   return (
     <div>
-      <CustomNavbar />
       <Silder />
       <CardDisplay />
-      <Footer />
     </div>
   );
 };
