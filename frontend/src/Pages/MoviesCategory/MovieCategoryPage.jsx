@@ -4,7 +4,7 @@ import { Pagination } from "antd";
 import { useParams } from 'react-router-dom';
 import SkeletonCard from '../../components/SkeletonCard/SkeletonCard';
 import axios from 'axios';
-
+import Moviecard from '../../components/Moviescard/Moviecard';
 const MovieCategoryPage = () => {
   const {category}=useParams()
  const moviesPerPage=12
