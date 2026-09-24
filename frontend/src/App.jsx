@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import {Toaster} from "react-hot-toast"
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Home from "./Pages/home/Home";
 import CustomNavbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/movies/:title" element={<MovieDetailes/>} />
       </Routes>
       <Footer/>
+      <SpeedInsights />
     </>
   );
 };
